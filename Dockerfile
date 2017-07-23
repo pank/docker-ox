@@ -25,6 +25,11 @@ RUN apt-get update && \
   texlive-luatex \
   texlive-xetex && \
   apt-get autoclean && apt-get --purge --yes autoremove && apt-get clean && \
+  cd /tmp &&  wget http://orgmode.org/cgit.cgi/org-mode.git/snapshot/master.tar.gz && \
+  tar xfz master.tar.gz && cd master && \
+  make autoloads && \
+  cp -r lisp /usr/share/emacs/site-lisp/org && \
+  cp -r contrib/lisp/ /usr/share/emacs/site-lisp/org_contrib && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Export the output data
