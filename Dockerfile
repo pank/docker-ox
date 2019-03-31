@@ -1,4 +1,4 @@
-FROM debian:testing
+FROM debian:testing-slim
 LABEL maintainer "Rasmus <docker@pank.eu>"
 
 LABEL version="0.9.1"
