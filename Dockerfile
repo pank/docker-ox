@@ -1,7 +1,7 @@
 FROM debian:testing
 LABEL maintainer "Rasmus <docker@pank.eu>"
 
-LABEL version="0.9.1"
+LABEL version="0.10"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -9,7 +9,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
   apt-get install --yes --no-install-recommends \
   make \
+  curl \
   wget \
+  certbot \
   emacs-nox \
   ca-certificates \
   texlive-latex-base \
