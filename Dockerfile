@@ -26,7 +26,7 @@ RUN apt-get update && \
   texlive-xetex && \
   apt-get autoclean && apt-get --purge --yes autoremove && apt-get clean && \
   cd /tmp &&  wget https://code.orgmode.org/bzg/org-mode/archive/master.tar.gz && \
-  tar xfz master.tar.gz && cd master && \
+  tar xfz master.tar.gz && cd org-mode && \
   make autoloads && \
   cp -r lisp /usr/share/emacs/site-lisp/org && \
   cp -r contrib/lisp/ /usr/share/emacs/site-lisp/org_contrib && \
