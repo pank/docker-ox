@@ -13,18 +13,17 @@ RUN apt-get update && \
   emacs-nox \
   ca-certificates \
   texlive-latex-base \
-  texlive-plain-generic \ # iftex
-  texlive-fonts-extra \ # libertine font
-  texlive-fonts-recommended \ # 
+  texlive-plain-generic \ 
   texlive-lang-english \ 
   texlive-lang-european \ 
   texlive-lang-german \
-  texlive-latex-extra \  # various nice packages, like capt-of
-  texlive-bibtex-extra \ # biblatex & friends
+  texlive-latex-extra \ 
+  texlive-bibtex-extra \
   biber \
   fontconfig \
   texlive-luatex \
   texlive-xetex && \
+  apt-get install --yes texlive-fonts-extra texlive-fonts-recommended && \
   apt-get autoclean && apt-get --purge --yes autoremove && apt-get clean && \
   cd /tmp &&  wget https://code.orgmode.org/bzg/org-mode/archive/master.tar.gz && \
   tar xfz master.tar.gz && cd org-mode && \
