@@ -17,6 +17,8 @@ RUN apt-get update && \
   texlive-fonts-extra \ # libertine font
   texlive-fonts-recommended \ # 
   texlive-lang-english \ 
+  texlive-lang-european \ 
+  texlive-lang-german \
   texlive-latex-extra \  # various nice packages, like capt-of
   texlive-bibtex-extra \ # biblatex & friends
   biber \
