@@ -13,13 +13,12 @@ RUN apt-get update && \
   emacs-nox \
   ca-certificates \
   texlive-latex-base \
-  texlive-generic-extra \
-  texlive-fonts-extra \
-  texlive-fonts-recommended \
-  texlive-generic-recommended \
-  texlive-lang-english \
-  texlive-latex-extra \
-  texlive-bibtex-extra \
+  texlive-plain-generic \ # iftex
+  texlive-fonts-extra \ # libertine font
+  texlive-fonts-recommended \ # 
+  texlive-lang-english \ 
+  texlive-latex-extra \  # various nice packages, like capt-of
+  texlive-bibtex-extra \ # biblatex & friends
   biber \
   fontconfig \
   texlive-luatex \
@@ -30,7 +29,13 @@ RUN apt-get update && \
   make autoloads && \
   cp -r lisp /usr/share/emacs/site-lisp/org && \
   cp -r contrib/lisp/ /usr/share/emacs/site-lisp/org_contrib && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  rm -rf /var/lib/apt/lists && \
+  rm -rf /var/cache/apt/archives && \
+  rm -rf /tmp && \
+  rm -rf /var/tmp  && \
+  rm -rf /usr/share/doc && \
+  rm -rf /usr/share/man && \
+  rm -rf /usr/share/locale
 
 # Export the output data
 WORKDIR /data
