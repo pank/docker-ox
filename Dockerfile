@@ -1,9 +1,9 @@
 FROM debian:testing-slim
 LABEL maintainer "Rasmus <docker@pank.eu>"
-LABEL version="0.9.2"
+LABEL version="0.9.3"
 
 ENV DEBIAN_FRONTEND noninteractive
-# Install Emacs plus TeX and friends for Org-mode
+# Install Emacs, TeX and friends for Org-mode
 RUN apt-get update                                                        \
   && apt-get install --yes --no-install-recommends apt-utils              \
   && apt-get install --yes --no-install-recommends                        \
